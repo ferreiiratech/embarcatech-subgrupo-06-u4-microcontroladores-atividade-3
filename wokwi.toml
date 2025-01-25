@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/animation-led.uf2'
+elf = 'build/animation-led.elf'
