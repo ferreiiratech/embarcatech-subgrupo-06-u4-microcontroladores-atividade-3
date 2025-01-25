@@ -100,6 +100,16 @@ void desliga() {
     }
 }
 
+//Envia os dados do buffer para os LEDs.
+void buffer() {
+    for (uint i = 0; i < TOTAL_LEDS; ++i) {
+        pio_sm_put_blocking(np_pio, sm, leds[i].G);
+        pio_sm_put_blocking(np_pio, sm, leds[i].R);
+        pio_sm_put_blocking(np_pio, sm, leds[i].B);
+    }
+    sleep_us(100);
+}
+
 void animacao1() {
     int q = 3;
     while(q<=3, q--) {
@@ -113,16 +123,6 @@ void animacao1() {
     }
     desliga();
     buffer();
-}
-
-//Envia os dados do buffer para os LEDs.
-void buffer() {
-    for (uint i = 0; i < TOTAL_LEDS; ++i) {
-        pio_sm_put_blocking(np_pio, sm, leds[i].G);
-        pio_sm_put_blocking(np_pio, sm, leds[i].R);
-        pio_sm_put_blocking(np_pio, sm, leds[i].B);
-    }
-    sleep_us(100);
 }
 
 // Desenha um padrão de LEDs baseado na tecla pressionada.
