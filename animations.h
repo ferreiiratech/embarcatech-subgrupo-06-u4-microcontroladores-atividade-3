@@ -7,5 +7,6 @@ void animationAllOddLedsPink(void);
 void animationAllGreenLeds(void);
 void animationAllRedLeds(void);
 void animationAllBlueLeds(void);
+void animationCEPEDI(void);
 
 #endif
