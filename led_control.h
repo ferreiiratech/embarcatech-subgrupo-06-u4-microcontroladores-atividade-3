@@ -17,6 +17,7 @@ void controle(uint pin);
 void cor(const uint index, const uint8_t r, const uint8_t g, const uint8_t b);
 void desliga(void);
 void buffer(void);
+int getIndex(int x, int y);
 void animationFunctions(char key);
 
 #endif
