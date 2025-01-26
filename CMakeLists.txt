@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(animation-led animation-led.c )
+add_executable(animation-led animation-led.c keypad.c led_control.c animations.c)
 
 pico_set_program_name(animation-led "animation-led")
 pico_set_program_version(animation-led "0.1")
