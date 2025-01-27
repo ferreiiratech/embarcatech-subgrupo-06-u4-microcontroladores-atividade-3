@@ -30,11 +30,11 @@ void animationAllOddLedsPink(){
 }
 
 void animationAllGreenLeds(){
-    for (int i = 0; i < TOTAL_LEDS; i++) cor(i, 0, 255, 0);
+    for (int i = 0; i < TOTAL_LEDS; i++) cor(i, 0, 128, 0);
 }
 
 void animationAllRedLeds(){
-    for (int i = 0; i < TOTAL_LEDS; i++) cor(i, 255, 0, 0);
+    for (int i = 0; i < TOTAL_LEDS; i++) cor(i, 204, 0, 0);
 }
 
 void animationAllBlueLeds(){
@@ -171,3 +171,31 @@ void animationCEPEDI(){
     buffer();
     sleep_ms(2000);
 }
+
+void animationSEQUENCE() {
+    //acende e apaga sete cores em sequência
+    // Cores para a animação (Laranja, Ciano, Lilás, Vermelho, Azul, Verde, Branco)
+    const int cores[7][3] = {
+        {255, 165,  0 },  // Laranja
+        { 0 , 255, 255},  // Ciano
+        {200,  0 , 255},  // Lilás
+        {255,  0 ,  0 },  // Vermelho
+        { 0 ,  0 , 255},  // Azul
+        { 0 , 255,  0 },  // Verde
+        {255, 255, 255} };// Branco
+    
+    for (int c = 0; c < 7; c++) { // Itera sobre as cores
+        // Acende os LEDs na sequência
+        for (int i = 0; i < TOTAL_LEDS; i++) {
+            cor(i, cores[c][0], cores[c][1], cores[c][2]); // Define a cor atual
+            bf(); // Atualiza os LEDs
+            sleep_ms(100); }// Aguarda 100 ms
+
+        // Apaga os LEDs na sequência inversa
+        for (int i = TOTAL_LEDS - 1; i >= 0; i--) {
+            cor(i, 0, 0, 0); // Desliga o LED atual
+            bf(); // Atualiza os LEDs
+            sleep_ms(100); }} // Aguarda 100 ms
+
+                desliga(); // Garante que todos os LEDs fiquem apagados no final
+                bf(); } // Atualiza os LEDs para o estado desligado
