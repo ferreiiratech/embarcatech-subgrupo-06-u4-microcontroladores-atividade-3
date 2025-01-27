@@ -52,6 +52,14 @@ int getIndex(int x, int y) {
         }
     }
 
+// Função para animação das leds brancas com baixa intensidade (20%)
+void animationWhiteLedsLowIntensity() {
+    for (int i = 0; i < TOTAL_LEDS; i++) {
+        cor(i, 51, 51, 51); // Branco com 20% de intensidade
+    }
+    buffer(); // Atualiza o estado dos LEDs
+}
+
 // Função para executar a animação correspondente à tecla pressionada
 void animationFunctions(char key) {
     desliga();
@@ -79,6 +87,9 @@ void animationFunctions(char key) {
             break;
         case '7':
             animationCEPEDI();
+            break;
+        case '#':
+            animationWhiteLedsLowIntensity();
             break;
         default:
             break;
