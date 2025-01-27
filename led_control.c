@@ -77,6 +77,9 @@ void animationFunctions(char key) {
         case '3':
             animacaoPurpleLineInterval();
             break;
+        case '4':
+            animationSEQUENCE();
+            break;
         case '7':
             animationCEPEDI();
             break;
