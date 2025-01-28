@@ -1,6 +1,7 @@
 #include "led_control.h"
 #include "ws2818b.pio.h"
 #include "animations.h"
+#include "pico/bootrom.h" // Include the header for reset_usb_boot function
 
 npLED_t leds[TOTAL_LEDS]; // Array que representa os LEDs
 PIO np_pio; // Objeto representando o periférico PIO usado para controlar os LEDs
@@ -52,6 +53,13 @@ int getIndex(int x, int y) {
         }
     }
 
+void activateBootselMode(){
+    // Ativa o modo de inicialização do dispositivo
+    // O dispositivo será reiniciado e entrará no modo de inicialização
+    // para permitir a atualização do firmware
+    reset_usb_boot(0, 0);
+}
+
 // Função para executar a animação correspondente à tecla pressionada
 void animationFunctions(char key) {
     desliga();
@@ -69,7 +77,7 @@ void animationFunctions(char key) {
             animationAllGreenLeds();
             break;
         case '1':
-            animationAllOddLedsPink();
+            animationEspiral();
             break;
         case '2':
             animationAllLedsYellowPairs();
@@ -80,11 +88,20 @@ void animationFunctions(char key) {
         case '4':
             animationSEQUENCE();
             break;
+        case '6':
+            animationHeartbeat();
+            break;
         case '7':
             animationCEPEDI();
             break;
         case '8':
             animacaoRelogio();
+            break;
+        case '#':
+            animationWhiteLedsLowIntensity();
+            break;
+        case '*':
+            activateBootselMode();
             break;
         default:
             break;

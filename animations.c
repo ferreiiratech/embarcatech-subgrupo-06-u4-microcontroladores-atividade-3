@@ -6,8 +6,6 @@
 #define Buzzer_A 21 
 #define Buzzer_B 10 
 
-
-
 void animacaoPurpleLineInterval()
 {
   int q = 3;
@@ -37,13 +35,65 @@ void animationAllLedsYellowPairs()
   }
 }
 
-void animationAllOddLedsPink()
+void animationEspiral()
 {
-  for (int i = 0; i < TOTAL_LEDS; i++)
-  {
-    if (i % 2 != 0)
-      cor(i, 255, 0, 255);
-  }
+    const int timeFrame = 200;
+    const int rows = 5;
+    const int cols = 5;
+
+    // Coordenadas para seguir o padrão em espiral
+    int spiralOrder[25][2] = {
+      {0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0},
+      {4, 1}, {4, 2}, {4, 3}, {4, 4},
+      {3, 4}, {2, 4}, {1, 4}, {0, 4},
+      {0, 3}, {0, 2}, {0, 1},
+      {1, 1}, {2, 1}, {3, 1},
+      {3, 2}, {3, 3},
+      {2, 3}, {1, 3},
+      {1, 2}, {2, 2}
+    };
+
+    // Percorre cada LED na ordem espiral
+    for (int i = 0; i < TOTAL_LEDS; i++)
+    {
+        // Acende todos os LEDs anteriores para manter o efeito
+      for (int j = 0; j <= i; j++)
+      {
+        int linha = spiralOrder[j][0];
+        int coluna = spiralOrder[j][1];
+        int posicao = getIndex(linha, coluna);
+        cor(posicao, 50, 0, 100);
+
+        if(i == TOTAL_LEDS - 1){
+          cor(posicao, 100, 0, 0);
+        }
+      }
+      buffer();
+      sleep_ms(timeFrame);
+    }
+
+    desliga();
+
+    // Loop reverso do centro para as bordas
+    for (int i = TOTAL_LEDS - 1; i >= 0; i--)
+    {
+      // Acende todos os LEDs a partir do centro
+      for (int j = TOTAL_LEDS - 1; j >= i; j--)
+      {
+          int linha = spiralOrder[j][0];
+          int coluna = spiralOrder[j][1];
+          int posicao = getIndex(linha, coluna);
+          cor(posicao, 100, 0, 0);
+
+          if(i == 0){
+            cor(posicao, 0, 0, 100);
+          }
+      }
+
+      buffer();
+      sleep_ms(timeFrame);
+    }
+    desliga();
 }
 
 void animationAllGreenLeds()
@@ -62,6 +112,81 @@ void animationAllBlueLeds()
 {
   for (int i = 0; i < TOTAL_LEDS; i++)
     cor(i, 0, 0, 255);
+}
+
+//Animação Coração - Tecla 6
+
+void animationHeartbeat()
+{
+    const int timeFrame = 300; // Tempo entre os frames em milissegundos
+
+    // Definição dos 6 frames do coração
+    int frames[6][5][5][3] = {
+        // Frame 1 - Menor
+        {
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+        },
+        // Frame 2 - Crescendo
+        {
+            {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+        },
+        // Frame 3 - Maior
+        {
+            {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+        },
+        // Frame 4 - Diminuindo
+        {
+            {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+        },
+        // Frame 5 - Menor novamente
+        {
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+            {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+        },
+        // Frame 6 - Apagado
+        {
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+            {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+        },
+    };
+
+    // Reproduzir os frames do coração
+    for (int frame = 0; frame < 6; frame++)
+    {
+        for (int linha = 0; linha < 5; linha++)
+        {
+            for (int coluna = 0; coluna < 5; coluna++)
+            {
+                int posicao = getIndex(4 - coluna, linha);
+                cor(posicao, frames[frame][linha][coluna][0], frames[frame][linha][coluna][1], frames[frame][linha][coluna][2]);
+            }
+        }
+        buffer();            // Atualiza os LEDs
+        sleep_ms(timeFrame); // Espera entre os frames
+    }
+    desliga(); // Garante que os LEDs fiquem apagados após a animação
 }
 
 // Animação C E P E D I - Tecla 7
@@ -427,4 +552,12 @@ void animacaoRelogio()
   buffer();
   sleep_ms(tempo_do_frame);
   desliga();
+}
+
+// Função para animação das leds brancas com baixa intensidade (20%)
+void animationWhiteLedsLowIntensity() {
+    for (int i = 0; i < TOTAL_LEDS; i++) {
+        cor(i, 51, 51, 51); // Branco com 20% de intensidade
+    }
+    buffer(); // Atualiza o estado dos LEDs
 }
