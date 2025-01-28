@@ -1,5 +1,9 @@
 #include "animations.h"
 #include "led_control.h"
+#include "pico/stdlib.h"
+
+#define buzzer_A 21
+#define buzzer_B 10
 
 void animacaoPurpleLineInterval()
 {
