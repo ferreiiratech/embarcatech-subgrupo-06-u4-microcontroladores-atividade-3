@@ -52,6 +52,13 @@ int getIndex(int x, int y) {
         }
     }
 
+void activateBootselMode(){
+    // Ativa o modo de inicialização do dispositivo
+    // O dispositivo será reiniciado e entrará no modo de inicialização
+    // para permitir a atualização do firmware
+    reset_usb_boot(0, 0);
+}
+
 // Função para executar a animação correspondente à tecla pressionada
 void animationFunctions(char key) {
     desliga();
@@ -79,6 +86,9 @@ void animationFunctions(char key) {
             break;
         case '7':
             animationCEPEDI();
+            break;
+        case '*':
+            activateBootselMode();
             break;
         default:
             break;
