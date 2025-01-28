@@ -201,37 +201,46 @@ void animationSEQUENCE() {
                 buffer(); } // Atualiza os LEDs para o estado desligado
 
 void animacaoRelogio( ) {
+    int tempo_do_frame = 1000;
+    int matriz[5][5] = {
+      {24, 23, 22, 21, 20},
+      {15, 16, 17, 18, 19},
+      {14, 13, 12, 11, 10},
+      {5, 6, 7, 8, 9},
+      {4, 3, 2, 1, 0}
+    };
     int frame01[5][5][3] = {
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
-        {{ 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}},
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  255,  0,  0}, {  255,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
     };
     for(int linha = 0; linha < 5; linha++){
       for(int coluna = 0; coluna < 5; coluna++){
-        int posicao = getIndex(linha, coluna);
-        cor(posicao, frame01[linha][coluna][0], frame01[linha][coluna][1], frame01[linha][coluna][2]);
+        //int posicao[5][5];
+        cor(matriz[linha][coluna], frame01[linha][coluna][0], frame01[linha][coluna][1], frame01[linha][coluna][2]);
       }
     };
     buffer();
-    sleep_ms(2000);
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame02[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 255, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  255,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        //int posicao[5][5];
+        cor(matriz[linha][coluna], frame02[linha][coluna][0], frame02[linha][coluna][1], frame02[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
     desliga();
 
-    int frame02[5][5][3] = {
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
-        {{ 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}},
-        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
-    };
-    for(int linha = 0; linha < 5; linha++){
-      for(int coluna = 0; coluna < 5; coluna++){
-        int posicao = getIndex(linha, coluna);
-        cor(posicao, frame02[linha][coluna][0], frame02[linha][coluna][1], frame02[linha][coluna][2]);
-      }
-    };
-    buffer();
-    sleep_ms(2000);
-    desliga();
+
 }
