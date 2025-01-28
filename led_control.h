@@ -19,5 +19,7 @@ void desliga(void);
 void buffer(void);
 int getIndex(int x, int y);
 void animationFunctions(char key);
+void animationWhiteLedsLowIntensity(void);
+
 
 #endif
