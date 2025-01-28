@@ -69,7 +69,7 @@ void animationFunctions(char key) {
             animationAllGreenLeds();
             break;
         case '1':
-            animationAllOddLedsPink();
+            animationEspiral();
             break;
         case '2':
             animationAllLedsYellowPairs();

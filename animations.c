@@ -35,7 +35,7 @@ void animationAllLedsYellowPairs()
   }
 }
 
-void animationAllOddLedsPink()
+void animationEspiral()
 {
     const int timeFrame = 200;
     const int rows = 5;
