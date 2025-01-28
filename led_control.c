@@ -80,6 +80,9 @@ void animationFunctions(char key) {
         case '4':
             animationSEQUENCE();
             break;
+        case '6':
+            animationHeartbeat();
+            break;
         case '7':
             animationCEPEDI();
             break;
