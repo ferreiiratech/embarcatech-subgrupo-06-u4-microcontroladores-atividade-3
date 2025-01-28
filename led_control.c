@@ -76,6 +76,9 @@ void animationFunctions(char key) {
         case 'D':
             animationAllGreenLeds();
             break;
+        case '0':
+            chuva();
+            break;
         case '1':
             animationEspiral();
             break;
