@@ -234,7 +234,7 @@ void animationSEQUENCE()
 
 void animacaoRelogio()
 {                            // Animação do Relógio
-  int tempo_do_frame = 5000; // Tempo do frame
+  int tempo_do_frame = 1000; // Tempo do frame
   int matriz[5][5] = {       // Matriz de LEDs
       {24, 23, 22, 21, 20},
       {15, 16, 17, 18, 19},
