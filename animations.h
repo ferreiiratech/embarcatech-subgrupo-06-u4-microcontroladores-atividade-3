@@ -12,5 +12,6 @@ void animationCEPEDI(void);
 void animationSEQUENCE(void);
 void animacaoRelogio(void);
 void animationWhiteLedsLowIntensity(void);
+void animacaoAlvo(void);
 
 #endif
