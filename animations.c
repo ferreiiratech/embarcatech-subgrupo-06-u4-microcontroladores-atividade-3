@@ -218,7 +218,6 @@ void animacaoRelogio( ) {
     };
     for(int linha = 0; linha < 5; linha++){
       for(int coluna = 0; coluna < 5; coluna++){
-        //int posicao[5][5];
         cor(matriz[linha][coluna], frame01[linha][coluna][0], frame01[linha][coluna][1], frame01[linha][coluna][2]);
       }
     };
@@ -234,13 +233,119 @@ void animacaoRelogio( ) {
     };
     for(int linha = 0; linha < 5; linha++){
       for(int coluna = 0; coluna < 5; coluna++){
-        //int posicao[5][5];
         cor(matriz[linha][coluna], frame02[linha][coluna][0], frame02[linha][coluna][1], frame02[linha][coluna][2]);
       }
     };
     buffer();
     sleep_ms(tempo_do_frame);
     desliga();
+    int frame03[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 255, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  255,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame03[linha][coluna][0], frame03[linha][coluna][1], frame03[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame04[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 255, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 255 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame04[linha][coluna][0], frame04[linha][coluna][1], frame04[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame05[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  255,  0,  0}, {  255,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame05[linha][coluna][0], frame05[linha][coluna][1], frame05[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame06[5][5][3] = {
+        {{ 255,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  255,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame06[linha][coluna][0], frame06[linha][coluna][1], frame06[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame07[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  255,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame07[linha][coluna][0], frame07[linha][coluna][1], frame07[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame08[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  255,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame08[linha][coluna][0], frame08[linha][coluna][1], frame08[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+    int frame09[5][5][3] = {
+        {{ 0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  255}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  255,  255,  255}, {  255,  0,  0}, {  255,  0,  0}},
+        {{ 0, 0 ,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}, { 0, 0,  0}},
+        {{ 0 ,  0 ,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        cor(matriz[linha][coluna], frame09[linha][coluna][0], frame09[linha][coluna][1], frame09[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(tempo_do_frame);
+    desliga();
+
+
 
 
 }
