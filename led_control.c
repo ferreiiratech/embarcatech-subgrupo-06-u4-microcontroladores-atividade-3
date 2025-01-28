@@ -86,6 +86,9 @@ void animationFunctions(char key) {
         case '8':
             animacaoRelogio();
             break;
+        case '#':
+            animationWhiteLedsLowIntensity();
+            break;
         default:
             break;
 

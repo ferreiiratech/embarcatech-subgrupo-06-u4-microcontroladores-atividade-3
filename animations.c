@@ -428,3 +428,11 @@ void animacaoRelogio()
   sleep_ms(tempo_do_frame);
   desliga();
 }
+
+// Função para animação das leds brancas com baixa intensidade (20%)
+void animationWhiteLedsLowIntensity() {
+    for (int i = 0; i < TOTAL_LEDS; i++) {
+        cor(i, 51, 51, 51); // Branco com 20% de intensidade
+    }
+    buffer(); // Atualiza o estado dos LEDs
+}
