@@ -18,8 +18,6 @@ int main() {
     gpio_set_dir(Buzzer_A, GPIO_OUT);
     gpio_set_dir(Buzzer_B, GPIO_OUT);
     printf("Sistema iniciado!\n");
-    animacaoRelogio();
-    buffer();
 
     // Loop principal
     while (true) {
