@@ -26,6 +26,130 @@ void animacaoPurpleLineInterval()
   buffer();
 }
 
+// Tecla 5
+void animacaoAlvo(){
+  //Tempo entre os frames
+  int timeFrame = 500;
+
+  // Frame 01
+  int frame1[5][5][3] = {
+    {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+    {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},
+    {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},     
+    {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},     
+    {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame1[coluna][linha][0], frame1[coluna][linha][1], frame1[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 02
+  int frame2[5][5][3] = {
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame2[coluna][linha][0], frame2[coluna][linha][1], frame2[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 03
+  int frame3[5][5][3] = {
+    {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {255, 255, 255}, {255, 0, 0}, {255, 255, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame3[coluna][linha][0], frame3[coluna][linha][1], frame3[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 04
+  int frame4[5][5][3] = {
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 255}, {255, 255, 255}, {0, 0, 255}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame4[coluna][linha][0], frame4[coluna][linha][1], frame4[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 05
+  int frame5[5][5][3] = {
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame5[coluna][linha][0], frame5[coluna][linha][1], frame5[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 06
+  int frame6[5][5][3] = {
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame6[coluna][linha][0], frame6[coluna][linha][1], frame6[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+}
+
 void animationAllLedsYellowPairs()
 {
   for (int i = 0; i < TOTAL_LEDS; i++)
