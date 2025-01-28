@@ -2,8 +2,11 @@
 #include "led_control.h"
 #include "pico/stdlib.h"
 
-#define buzzer_A 21
-#define buzzer_B 10
+// Declare Buzzer_A
+#define Buzzer_A 21 
+#define Buzzer_B 10 
+
+
 
 void animacaoPurpleLineInterval()
 {
@@ -247,6 +250,7 @@ void animacaoRelogio()
       {4, 3, 2, 1, 0}};
 
   // FRAME 01
+  gpio_put(Buzzer_A, 1);
   int frame01[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -265,6 +269,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 02
+  gpio_put(Buzzer_A, 0);
+  gpio_put(Buzzer_B, 1);
   int frame02[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -281,6 +287,10 @@ void animacaoRelogio()
   buffer();
   sleep_ms(tempo_do_frame);
   desliga();
+
+  // FRAME 03 
+  gpio_put(Buzzer_B, 0);
+  gpio_put(Buzzer_A, 1);
   int frame03[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -299,6 +309,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 04
+  gpio_put(Buzzer_A, 0);
+  gpio_put(Buzzer_B, 1);
   int frame04[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -317,6 +329,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 05
+  gpio_put(Buzzer_A, 1);
+  gpio_put(Buzzer_B, 0);
   int frame05[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -335,6 +349,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 06
+  gpio_put(Buzzer_A, 0);
+  gpio_put(Buzzer_B, 1);
   int frame06[5][5][3] = {
       {{255, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {255, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -353,6 +369,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 07
+  gpio_put(Buzzer_A, 1);
+  gpio_put(Buzzer_B, 0);
   int frame07[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {255, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {255, 255, 0}},
@@ -371,6 +389,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 08
+  gpio_put(Buzzer_A, 0);
+  gpio_put(Buzzer_B, 1);
   int frame08[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {255, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 255},{255, 255, 0}},
@@ -389,6 +409,8 @@ void animacaoRelogio()
   desliga();
 
   // FRAME 09
+  gpio_put(Buzzer_A, 1);
+  gpio_put(Buzzer_B, 0);
   int frame09[5][5][3] = {
       {{0, 0, 0}, {255, 255, 0}, {0, 0, 0}, {255, 255, 0}, {0, 0, 0}},
       {{255, 255, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 255}, {255, 255, 0}},
