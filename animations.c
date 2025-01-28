@@ -199,3 +199,22 @@ void animationSEQUENCE() {
 
                 desliga(); // Garante que todos os LEDs fiquem apagados no final
                 bf(); } // Atualiza os LEDs para o estado desligado
+
+void animacaoRelogio( ) {
+    int frame[5][5][3] = {
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        int posicao = getIndex(linha, coluna);
+        cor(posicao, frame[linha][coluna][0], frame[linha][coluna][1], frame[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(2000);
+    desliga();
+}
