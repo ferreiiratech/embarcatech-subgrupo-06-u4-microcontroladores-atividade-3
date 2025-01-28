@@ -1,6 +1,7 @@
 #include "led_control.h"
 #include "ws2818b.pio.h"
 #include "animations.h"
+#include "pico/bootrom.h" // Include the header for reset_usb_boot function
 
 npLED_t leds[TOTAL_LEDS]; // Array que representa os LEDs
 PIO np_pio; // Objeto representando o periférico PIO usado para controlar os LEDs
