@@ -3,7 +3,7 @@
 
 void animacaoPurpleLineInterval(void);
 void animationAllLedsYellowPairs(void);
-void animationAllOddLedsPink(void);
+void animationEspiral(void);
 void animationAllGreenLeds(void);
 void animationAllRedLeds(void);
 void animationAllBlueLeds(void);

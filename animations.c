@@ -6,8 +6,6 @@
 #define Buzzer_A 21 
 #define Buzzer_B 10 
 
-
-
 void animacaoPurpleLineInterval()
 {
   int q = 3;
@@ -37,13 +35,65 @@ void animationAllLedsYellowPairs()
   }
 }
 
-void animationAllOddLedsPink()
+void animationEspiral()
 {
-  for (int i = 0; i < TOTAL_LEDS; i++)
-  {
-    if (i % 2 != 0)
-      cor(i, 255, 0, 255);
-  }
+    const int timeFrame = 200;
+    const int rows = 5;
+    const int cols = 5;
+
+    // Coordenadas para seguir o padrão em espiral
+    int spiralOrder[25][2] = {
+      {0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0},
+      {4, 1}, {4, 2}, {4, 3}, {4, 4},
+      {3, 4}, {2, 4}, {1, 4}, {0, 4},
+      {0, 3}, {0, 2}, {0, 1},
+      {1, 1}, {2, 1}, {3, 1},
+      {3, 2}, {3, 3},
+      {2, 3}, {1, 3},
+      {1, 2}, {2, 2}
+    };
+
+    // Percorre cada LED na ordem espiral
+    for (int i = 0; i < TOTAL_LEDS; i++)
+    {
+        // Acende todos os LEDs anteriores para manter o efeito
+      for (int j = 0; j <= i; j++)
+      {
+        int linha = spiralOrder[j][0];
+        int coluna = spiralOrder[j][1];
+        int posicao = getIndex(linha, coluna);
+        cor(posicao, 50, 0, 100);
+
+        if(i == TOTAL_LEDS - 1){
+          cor(posicao, 100, 0, 0);
+        }
+      }
+      buffer();
+      sleep_ms(timeFrame);
+    }
+
+    desliga();
+
+    // Loop reverso do centro para as bordas
+    for (int i = TOTAL_LEDS - 1; i >= 0; i--)
+    {
+      // Acende todos os LEDs a partir do centro
+      for (int j = TOTAL_LEDS - 1; j >= i; j--)
+      {
+          int linha = spiralOrder[j][0];
+          int coluna = spiralOrder[j][1];
+          int posicao = getIndex(linha, coluna);
+          cor(posicao, 100, 0, 0);
+
+          if(i == 0){
+            cor(posicao, 0, 0, 100);
+          }
+      }
+
+      buffer();
+      sleep_ms(timeFrame);
+    }
+    desliga();
 }
 
 void animationAllGreenLeds()
