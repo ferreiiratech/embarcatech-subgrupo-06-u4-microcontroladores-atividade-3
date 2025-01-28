@@ -10,7 +10,10 @@ int main() {
     init_keypad(); // Inicializa o teclado matricial
     controle(MATRIZ_LEDS); // Inicializa o controle dos LEDs
     printf("Sistema iniciado!\n");
+    animacaoRelogio();
+    buffer();
 
+    // Loop principal
     while (true) {
         char key = keypad_get_key(); // Lê a tecla pressionada
         if (key) {

@@ -188,20 +188,20 @@ void animationSEQUENCE() {
         // Acende os LEDs na sequência
         for (int i = 0; i < TOTAL_LEDS; i++) {
             cor(i, cores[c][0], cores[c][1], cores[c][2]); // Define a cor atual
-            bf(); // Atualiza os LEDs
+            buffer(); // Atualiza os LEDs
             sleep_ms(100); }// Aguarda 100 ms
 
         // Apaga os LEDs na sequência inversa
         for (int i = TOTAL_LEDS - 1; i >= 0; i--) {
             cor(i, 0, 0, 0); // Desliga o LED atual
-            bf(); // Atualiza os LEDs
+            buffer(); // Atualiza os LEDs
             sleep_ms(100); }} // Aguarda 100 ms
 
                 desliga(); // Garante que todos os LEDs fiquem apagados no final
-                bf(); } // Atualiza os LEDs para o estado desligado
+                buffer(); } // Atualiza os LEDs para o estado desligado
 
 void animacaoRelogio( ) {
-    int frame[5][5][3] = {
+    int frame01[5][5][3] = {
         {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
         {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
         {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
@@ -211,7 +211,24 @@ void animacaoRelogio( ) {
     for(int linha = 0; linha < 5; linha++){
       for(int coluna = 0; coluna < 5; coluna++){
         int posicao = getIndex(linha, coluna);
-        cor(posicao, frame[linha][coluna][0], frame[linha][coluna][1], frame[linha][coluna][2]);
+        cor(posicao, frame01[linha][coluna][0], frame01[linha][coluna][1], frame01[linha][coluna][2]);
+      }
+    };
+    buffer();
+    sleep_ms(2000);
+    desliga();
+
+    int frame02[5][5][3] = {
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},  
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}},
+        {{ 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}, { 0, 255,  0}},
+        {{  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}, {  0,  0,  0}}
+    };
+    for(int linha = 0; linha < 5; linha++){
+      for(int coluna = 0; coluna < 5; coluna++){
+        int posicao = getIndex(linha, coluna);
+        cor(posicao, frame02[linha][coluna][0], frame02[linha][coluna][1], frame02[linha][coluna][2]);
       }
     };
     buffer();

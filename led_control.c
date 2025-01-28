@@ -83,8 +83,12 @@ void animationFunctions(char key) {
         case '7':
             animationCEPEDI();
             break;
+        case '8':
+            animacaoRelogio();
+            break;
         default:
             break;
+
     }
     buffer();
 }
