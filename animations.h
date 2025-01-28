@@ -9,5 +9,6 @@ void animationAllRedLeds(void);
 void animationAllBlueLeds(void);
 void animationCEPEDI(void);
 void animationSEQUENCE(void);
+void animacaoRelogio(void);
 
 #endif
