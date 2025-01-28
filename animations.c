@@ -685,3 +685,45 @@ void animationWhiteLedsLowIntensity() {
     }
     buffer(); // Atualiza o estado dos LEDs
 }
+
+// Chuva de leds coloridos
+void chuva()
+{
+    int tempo_do_frame = 200; // Tempo de cada frame em milissegundos
+    int duracao_total = 10 * 1000; // Duração total em milissegundos (10 segundos)
+    int frames_totais = duracao_total / tempo_do_frame; // Calcula a quantidade de frames
+    
+    int matriz[5][5] = {
+        {24, 23, 22, 21, 20},
+        {15, 16, 17, 18, 19},
+        {14, 13, 12, 11, 10},
+        {5, 6, 7, 8, 9},
+        {4, 3, 2, 1, 0}};
+
+    for (int frame = 0; frame < frames_totais; frame++)
+    {
+        int chuva[5][5][3] = {0};
+
+        // Gera LEDs "caindo"
+        for (int coluna = 0; coluna < 5; coluna++)
+        {
+            int linhaAleatoria = rand() % 5;
+            chuva[linhaAleatoria][coluna][0] = rand() % 256;
+            chuva[linhaAleatoria][coluna][1] = rand() % 256;
+            chuva[linhaAleatoria][coluna][2] = rand() % 256;
+        }
+
+        // Define as cores nos LEDs
+        for (int linha = 0; linha < 5; linha++)
+        {
+            for (int coluna = 0; coluna < 5; coluna++)
+            {
+                cor(matriz[linha][coluna], chuva[linha][coluna][0], chuva[linha][coluna][1], chuva[linha][coluna][2]);
+            }
+        }
+
+        buffer();
+        sleep_ms(tempo_do_frame); // Espera o tempo do frame
+        desliga();
+    }
+}
