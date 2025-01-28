@@ -129,7 +129,7 @@ void animationHeartbeat()
         {
             for (int coluna = 0; coluna < 5; coluna++)
             {
-                int posicao = getIndex(linha, coluna);
+                int posicao = getIndex(4 - coluna, linha);
                 cor(posicao, frames[frame][linha][coluna][0], frames[frame][linha][coluna][1], frames[frame][linha][coluna][2]);
             }
         }
