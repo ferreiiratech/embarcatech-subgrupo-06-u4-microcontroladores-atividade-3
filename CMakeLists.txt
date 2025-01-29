@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(animation-led animation-led.c )
+add_executable(animation-led animation-led.c keypad.c led_control.c animations.c)
 
 pico_set_program_name(animation-led "animation-led")
 pico_set_program_version(animation-led "0.1")
@@ -46,7 +46,7 @@ pico_enable_stdio_usb(animation-led 1)
 
 # Add the standard library to the build
 target_link_libraries(animation-led
-        pico_stdlib)
+        pico_stdlib hardware_pio)
 
 # Add the standard include files to the build
 target_include_directories(animation-led PRIVATE
