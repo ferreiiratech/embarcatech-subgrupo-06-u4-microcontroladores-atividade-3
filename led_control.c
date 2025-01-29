@@ -83,7 +83,7 @@ void animationFunctions(char key) {
             animationEspiral();
             break;
         case '2':
-            animationAllLedsYellowPairs();
+            animationSOS();
             break;
         case '3':
             animacaoPurpleLineInterval();
