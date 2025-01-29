@@ -103,6 +103,9 @@ void animationFunctions(char key) {
         case '8':
             animacaoRelogio();
             break;
+        case '9':
+            animacaoCountdown();
+            break;
         case '#':
             animationWhiteLedsLowIntensity();
             break;

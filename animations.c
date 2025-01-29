@@ -686,6 +686,226 @@ void animationWhiteLedsLowIntensity() {
     buffer(); // Atualiza o estado dos LEDs
 }
 
+void animacaoCountdown(){
+
+  // Definição do tempo entre os frames
+  const int timeFrame = 1500;
+
+  // FRAME 1 (9)
+  int frame1[5][5][3] = {
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}}
+};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame1[coluna][linha][0], frame1[coluna][linha][1], frame1[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+   // FRAME 2 (8)
+  int frame2[5][5][3] = {
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}}
+};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame2[coluna][linha][0], frame2[coluna][linha][1], frame2[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+     // FRAME 3 (7)
+  int frame3[5][5][3] = {
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame3[coluna][linha][0], frame3[coluna][linha][1], frame3[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+   // FRAME 4 (6)
+  int frame4[5][5][3] = {
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}}
+}
+;
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame4[coluna][linha][0], frame4[coluna][linha][1], frame4[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 5 (5)
+  int frame5[5][5][3] = {
+      {{0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame5[coluna][linha][0], frame5[coluna][linha][1], frame5[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 6 (4)
+  int frame6[5][5][3] = {
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame6[coluna][linha][0], frame6[coluna][linha][1], frame6[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 7 (3)
+  int frame7[5][5][3] = {
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame7[coluna][linha][0], frame7[coluna][linha][1], frame7[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 8 (2)
+  int frame8[5][5][3] = {
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame8[coluna][linha][0], frame8[coluna][linha][1], frame8[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 9 (1)
+  int frame9[5][5][3] = {
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}}
+};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame9[coluna][linha][0], frame9[coluna][linha][1], frame9[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 10 (0)
+  int frame10[5][5][3] = {
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}, {0, 191, 255}},
+      {{0, 191, 255}, {0, 0, 0}, {0, 191, 255}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 191, 255}, {0, 191, 255}, {0, 0, 0}, {0, 0, 0}, {0, 191, 255}},
+      {{0, 0, 0}, {0, 191, 255}, {0, 191, 255}, {0, 191, 255}, {0, 0, 0}}
+};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame10[coluna][linha][0], frame10[coluna][linha][1], frame10[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // FRAME 11 ( )
+  int frame11[5][5][3] = {
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame11[coluna][linha][0], frame11[coluna][linha][1], frame11[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(2000);
+}
+
 // Chuva de leds coloridos
 void chuva()
 {
