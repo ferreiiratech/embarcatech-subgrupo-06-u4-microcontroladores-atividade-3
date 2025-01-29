@@ -1,6 +1,7 @@
 #include "animations.h"
 #include "led_control.h"
 #include "pico/stdlib.h"
+#include "stdlib.h"
 
 // Declare Buzzer_A
 #define Buzzer_A 21 
