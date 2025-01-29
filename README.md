@@ -139,7 +139,7 @@ Os teste no hardware podem ser visuakizados [aqui](https://drive.google.com/driv
 
 ### **3. Animação tecla 2**
 
-- **Descrição:** Ao precionar a tecla 2, é exibida uma animação ...
+- **Descrição:** Ao precionar a tecla 2, é exibida uma mensagem na matriz com as letras 'S O S' em vermelho.
 - **Passos:**
 
   1. Ligue a placa.
