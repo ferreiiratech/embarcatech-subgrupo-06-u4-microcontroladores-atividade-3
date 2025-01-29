@@ -13,6 +13,7 @@ void animationSEQUENCE(void);
 void animacaoRelogio(void);
 void animationWhiteLedsLowIntensity(void);
 void animacaoCountdown(void);
+void animationSOS(void);
 void animacaoAlvo(void);
 void chuva(void);
 
