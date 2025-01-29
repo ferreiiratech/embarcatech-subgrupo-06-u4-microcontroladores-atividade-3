@@ -76,6 +76,9 @@ void animationFunctions(char key) {
         case 'D':
             animationAllGreenLeds();
             break;
+        case '0':
+            chuva();
+            break;
         case '1':
             animationEspiral();
             break;
@@ -87,6 +90,9 @@ void animationFunctions(char key) {
             break;
         case '4':
             animationSEQUENCE();
+            break;
+        case '5':
+            animacaoAlvo();
             break;
         case '6':
             animationHeartbeat();

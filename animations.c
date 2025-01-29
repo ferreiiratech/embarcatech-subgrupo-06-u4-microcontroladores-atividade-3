@@ -1,6 +1,7 @@
 #include "animations.h"
 #include "led_control.h"
 #include "pico/stdlib.h"
+#include "stdlib.h"
 
 // Declare Buzzer_A
 #define Buzzer_A 21 
@@ -134,6 +135,130 @@ void animacaoPurpleLineInterval()
   }
   desliga();
   buffer();
+}
+
+// Tecla 5
+void animacaoAlvo(){
+  //Tempo entre os frames
+  int timeFrame = 500;
+
+  // Frame 01
+  int frame1[5][5][3] = {
+    {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+    {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},
+    {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},     
+    {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},     
+    {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame1[coluna][linha][0], frame1[coluna][linha][1], frame1[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 02
+  int frame2[5][5][3] = {
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame2[coluna][linha][0], frame2[coluna][linha][1], frame2[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 03
+  int frame3[5][5][3] = {
+    {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {255, 255, 255}, {255, 0, 0}, {255, 255, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {0, 0, 255}},
+    {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame3[coluna][linha][0], frame3[coluna][linha][1], frame3[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 04
+  int frame4[5][5][3] = {
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 255}, {255, 255, 255}, {0, 0, 255}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame4[coluna][linha][0], frame4[coluna][linha][1], frame4[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 05
+  int frame5[5][5][3] = {
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 255}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+  };
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame5[coluna][linha][0], frame5[coluna][linha][1], frame5[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
+  desliga();
+
+  // Frame 06
+  int frame6[5][5][3] = {
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}};
+  for (int linha = 0; linha < 5; linha++)
+  {
+    for (int coluna = 0; coluna < 5; coluna++)
+    {
+      int posicao = getIndex(linha, coluna);
+      cor(posicao, frame6[coluna][linha][0], frame6[coluna][linha][1], frame6[coluna][linha][2]);
+    }
+  };
+  buffer();
+  sleep_ms(timeFrame);
 }
 
 void animationAllLedsYellowPairs()
@@ -890,4 +1015,46 @@ void animacaoCountdown(){
   };
   buffer();
   sleep_ms(2000);
+}
+
+// Chuva de leds coloridos
+void chuva()
+{
+    int tempo_do_frame = 200; // Tempo de cada frame em milissegundos
+    int duracao_total = 10 * 1000; // Duração total em milissegundos (10 segundos)
+    int frames_totais = duracao_total / tempo_do_frame; // Calcula a quantidade de frames
+    
+    int matriz[5][5] = {
+        {24, 23, 22, 21, 20},
+        {15, 16, 17, 18, 19},
+        {14, 13, 12, 11, 10},
+        {5, 6, 7, 8, 9},
+        {4, 3, 2, 1, 0}};
+
+    for (int frame = 0; frame < frames_totais; frame++)
+    {
+        int chuva[5][5][3] = {0};
+
+        // Gera LEDs "caindo"
+        for (int coluna = 0; coluna < 5; coluna++)
+        {
+            int linhaAleatoria = rand() % 5;
+            chuva[linhaAleatoria][coluna][0] = rand() % 256;
+            chuva[linhaAleatoria][coluna][1] = rand() % 256;
+            chuva[linhaAleatoria][coluna][2] = rand() % 256;
+        }
+
+        // Define as cores nos LEDs
+        for (int linha = 0; linha < 5; linha++)
+        {
+            for (int coluna = 0; coluna < 5; coluna++)
+            {
+                cor(matriz[linha][coluna], chuva[linha][coluna][0], chuva[linha][coluna][1], chuva[linha][coluna][2]);
+            }
+        }
+
+        buffer();
+        sleep_ms(tempo_do_frame); // Espera o tempo do frame
+        desliga();
+    }
 }
